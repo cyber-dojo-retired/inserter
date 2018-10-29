@@ -1,0 +1,12 @@
+#-----Ignore everything
+
+*
+
+-#-----!Except these dirs
+
+!dup
+!old
+
+-#-----!Except these files
+
+!insert.sh
