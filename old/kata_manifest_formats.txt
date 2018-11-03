@@ -33,7 +33,7 @@ Contain the following keys
       "filename_extension":  ".py",
       "progress_regexs":     [],
       "highlight_filenames": [],
-      "lowlight_filenames":  [...],
+      "lowlight_filenames":  [...], (NO LONGER USED)
       "red_amber_green":      "lambda..." (NO LONGER USED)
 
 

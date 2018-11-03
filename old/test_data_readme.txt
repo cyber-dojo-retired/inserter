@@ -2,13 +2,12 @@
 The test data
 =============
 
-This dir holds six examples of katas used as data for storer tests.
-They are tar-piped into the storer container.
+This dir holds seven examples of katas used as data for tests.
+They are tar-piped into a container.
 They are used to test methods which rely on
   o) handling of old style avatar .git dirs
-  o) using starter.old_manifest(language) to convert from the
-     old-style manifest.json format to the new-style manifest.json
-     format. See below.
+  o) converting from the old-style manifest.json format
+    to the new-style manifest.json format. See below.
 
 
 There are four katas with the old-style .git dirs:
@@ -32,4 +31,3 @@ There is one defect-driven kata (it has a custom display-name)
 id           avatar       lights     language         renaming?
 ---------------------------------------------------------------
 1F/00C1BFC8  turtle       2          Ruby-Cucumber    no
-
