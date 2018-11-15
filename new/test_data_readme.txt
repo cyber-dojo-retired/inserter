@@ -10,8 +10,19 @@ which created...
 
 9f/8TeZMZAq/...
 9f/67Q9PyZm/...
+etc
 
 Then create tgz files for each of these dirs...
 
 tar -czvf 9f8TeZMZAq.tgz 9f/8TeZMZAq
 tar -czvf 9f67Q9PyZm.tgz 9f/67Q9PyZm
+etc
+
+
+9fH6TumFV2 is a large kata:
+ 48 antelope
+ 62 beetle
+ 26 buffalo
+ 69 hyena
+104 ostrich
+ 80 squid
