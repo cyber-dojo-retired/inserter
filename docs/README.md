@@ -7,7 +7,7 @@ alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
 # cyberdojo/inserter docker image
 
 - A docker-containerized micro-service for [cyber-dojo](http://cyber-dojo.org).
-- Inserts old storer katas into a named docker-container (for testing)
+- Inserts old storer katas into a named docker-container (for testing).
 - eg
 ```
 docker run \
@@ -22,7 +22,7 @@ inserting duplicate katas into test-web-storer
 ...0BA7E16149
 ...463748A0E8
 ...463748D943
-inserting duplicate katas into test-web-storer
+inserting old katas into test-web-storer
 ...1F00C1BFC8
 ...5A0F824303
 ...420B05BA0A
@@ -30,6 +30,16 @@ inserting duplicate katas into test-web-storer
 ...421F303E80
 ...420BD5D5BE
 ...421AFD7EC5
+inserting new katas into test-web-storer
+...9f8TeZMZAq
+...9f67Q9PyZm
+...9fcW44ltyz
+...9fDYJR3BfG
+...9fH6TumFV2
+...9fSqUqMecK
+...9fT2wMW0BM
+...9fUSFm6hmT
+...9fvMuUlKbh
 ```
 
 - - - -

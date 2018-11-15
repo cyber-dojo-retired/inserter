@@ -2,7 +2,7 @@
 set -e
 
 readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
-readonly KATA_IDS=(1F00C1BFC8 5A0F824303 420B05BA0A 420F2A2979 421F303E80 420BD5D5BE 421AFD7EC5)
+readonly KATA_IDS=(9f8TeZMZAq 9f67Q9PyZm 9fcW44ltyz 9fDYJR3BfG 9fH6TumFV2 9fSqUqMecK 9fT2wMW0BM 9fUSFm6hmT 9fvMuUlKbh)
 readonly STORER_CONTAINER=${1}
 
 # this must be set to the same value as Storer's path.
@@ -18,7 +18,7 @@ docker exec \
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
 
-echo "inserting old katas into ${STORER_CONTAINER}"
+echo "inserting new katas into ${STORER_CONTAINER}"
 
 for KATA_ID in "${KATA_IDS[@]}"
 do
@@ -32,7 +32,7 @@ do
 done
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
-# set ownership of test-data in storer-container
+# set ownership of test-data
 
 docker exec \
     --user root \

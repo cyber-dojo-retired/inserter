@@ -9,3 +9,4 @@ fi
 
 ${ROOT_DIR}/dup/tar_pipe_in.sh $1
 ${ROOT_DIR}/old/tar_pipe_in.sh $1
+${ROOT_DIR}/new/tar_pipe_in.sh $1
