@@ -10,7 +10,8 @@ fi
 
 readonly CONTAINER=${1}
 shift
-
-${ROOT_DIR}/dup/tar_pipe_in.sh ${CONTAINER}
-${ROOT_DIR}/old/tar_pipe_in.sh ${CONTAINER}
-${ROOT_DIR}/new/tar_pipe_in.sh ${CONTAINER}
+for arg in $@; do
+  case ${arg} in
+    dup|old|new) ${ROOT_DIR}/${arg}/tar_pipe_in.sh ${CONTAINER}
+  esac
+done
