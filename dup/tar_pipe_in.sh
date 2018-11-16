@@ -2,14 +2,15 @@
 set -e
 
 readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
-readonly KATA_IDS=(0BA7E1E01B 0BA7E16149 463748A0E8 463748D943)
+readonly KATA_IDS=( \
+    0BA7E1E01B \
+    0BA7E16149 \
+    463748A0E8 \
+    463748D943)
 readonly STORER_CONTAINER=${1}
-
-# this must be set to the same value as Storer's path.
 readonly KATAS_ROOT=/usr/src/cyber-dojo/katas
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
-# make sure ${KATAS_ROOT} dir exists
 
 docker exec \
   --user root \
@@ -32,7 +33,6 @@ do
 done
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
-# set ownership of test-data
 
 docker exec \
     --user root \
