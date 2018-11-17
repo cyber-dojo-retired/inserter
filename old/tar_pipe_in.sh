@@ -2,6 +2,8 @@
 set -e
 
 readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
+readonly STORER_CONTAINER=${1}
+readonly KATAS_ROOT=${2}
 readonly KATA_IDS=( \
   1F00C1BFC8 \
   5A0F824303 \
@@ -9,22 +11,11 @@ readonly KATA_IDS=( \
   420F2A2979 \
   421F303E80 \
   420BD5D5BE \
-  421AFD7EC5)
-readonly STORER_CONTAINER=${1}
-readonly KATAS_ROOT=/usr/src/cyber-dojo/katas
-
-# - - - - - - - - - - - - - - - - - - - - - - - -
-# make sure ${KATAS_ROOT} dir exists
-
-docker exec \
-  --user root \
-  ${STORER_CONTAINER} \
-    sh -c "mkdir -p ${KATAS_ROOT}"
+  421AFD7EC5 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
 
 echo "inserting old katas into ${STORER_CONTAINER}"
-
 for KATA_ID in "${KATA_IDS[@]}"
 do
   echo "...${KATA_ID}"
@@ -35,11 +26,3 @@ do
         ${STORER_CONTAINER} \
             sh -c "tar -zxf - -C ${KATAS_ROOT}"
 done
-
-# - - - - - - - - - - - - - - - - - - - - - - - -
-# set ownership of test-data in storer-container
-
-docker exec \
-    --user root \
-    ${STORER_CONTAINER} \
-      sh -c "chown -R storer:storer ${KATAS_ROOT}"

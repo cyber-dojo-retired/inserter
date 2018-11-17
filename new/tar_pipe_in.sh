@@ -2,6 +2,8 @@
 set -e
 
 readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
+readonly STORER_CONTAINER=${1}
+readonly KATAS_ROOT=${2}
 readonly KATA_IDS=( \
   9f8TeZMZAq \
   9f67Q9PyZm \
@@ -11,21 +13,11 @@ readonly KATA_IDS=( \
   9fSqUqMecK \
   9fT2wMW0BM \
   9fUSFm6hmT \
-  9fvMuUlKbh)
-readonly STORER_CONTAINER=${1}
-readonly KATAS_ROOT=/usr/src/cyber-dojo/katas
-
-# - - - - - - - - - - - - - - - - - - - - - - - -
-
-docker exec \
-  --user root \
-  ${STORER_CONTAINER} \
-    sh -c "mkdir -p ${KATAS_ROOT}"
+  9fvMuUlKbh )
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
 
 echo "inserting new katas into ${STORER_CONTAINER}"
-
 for KATA_ID in "${KATA_IDS[@]}"
 do
   echo "...${KATA_ID}"
@@ -36,10 +28,3 @@ do
         ${STORER_CONTAINER} \
             sh -c "tar -zxf - -C ${KATAS_ROOT}"
 done
-
-# - - - - - - - - - - - - - - - - - - - - - - - -
-
-docker exec \
-    --user root \
-    ${STORER_CONTAINER} \
-      sh -c "chown -R storer:storer ${KATAS_ROOT}"

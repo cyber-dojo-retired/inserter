@@ -15,7 +15,7 @@ docker run \
    --volume /var/run/docker.sock:/var/run/docker.sock \
    cyberdojo/inserter \
      test-web-storer \
-       dup old new
+       dup old new lot
 ```
 ```
 inserting duplicate katas into test-web-storer
@@ -41,6 +41,8 @@ inserting new katas into test-web-storer
 ...9fT2wMW0BM
 ...9fUSFm6hmT
 ...9fvMuUlKbh
+inserting lots of katas into test-web-storer
+...7E...
 ```
 
 - - - -
