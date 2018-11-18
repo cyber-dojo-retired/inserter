@@ -25,7 +25,7 @@ docker exec \
 for arg in $@
 do
   case ${arg} in
-    dup|old|new|7E|red) \
+    dup|old|new|7E|4D|red) \
       ${ROOT_DIR}/${arg}/tar_pipe_in.sh \
         ${STORER_CONTAINER} ${KATAS_ROOT}
   esac

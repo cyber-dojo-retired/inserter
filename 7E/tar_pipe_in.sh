@@ -7,7 +7,7 @@ readonly KATAS_ROOT=${2}
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
 
-echo "inserting 7E/ of katas into ${STORER_CONTAINER}"
+echo "inserting 7E/ katas into ${STORER_CONTAINER}"
 echo "...7E..."
 cat ${MY_DIR}/7E.tgz \
   | docker exec \
