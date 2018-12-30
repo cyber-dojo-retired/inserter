@@ -12,7 +12,7 @@ For example:
 local cid=$(docker run \
   --detach \
   --interactive \
-  --volumes-from my-data-container \
+  --volumes-from my-stub-data-container \
    cyberdojo/storer sh)
 
 docker run \
