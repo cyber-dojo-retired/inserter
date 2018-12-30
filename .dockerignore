@@ -4,12 +4,17 @@
 
 -#-----!Except these dirs
 
-!dup
-!old
-!new
-!7E
+!02
 !4D
+!7E
+!FD
+!dup_client
+!dup_server
+!new
+!old
 !red
+!throws
+!rm_fail
 
 -#-----!Except these files
 

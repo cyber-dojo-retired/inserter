@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e
 
-if [ -z ${1+x} ]; then
-  echo "Pass the name of the container you wish to insert into"
-  exit 1
-fi
-
 readonly ROOT_DIR="$( cd "$( dirname "${0}" )" && pwd )"
 readonly STORER_CONTAINER=${1}
 readonly KATAS_ROOT=/usr/src/cyber-dojo/katas
@@ -20,21 +15,19 @@ docker exec \
     sh -c "mkdir -p ${KATAS_ROOT}"
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
-# tar pipe test specified data into storer-container
+# tar pipe named test-data set into storer-container
+# and set its ownership.
 
 for arg in $@
 do
-  case ${arg} in
-    dup|old|new|7E|4D|red) \
-      ${ROOT_DIR}/${arg}/tar_pipe_in.sh \
-        ${STORER_CONTAINER} ${KATAS_ROOT}
-  esac
+  ${ROOT_DIR}/${arg}/tar_pipe_in.sh \
+      ${STORER_CONTAINER} ${KATAS_ROOT}
 done
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
-# set ownership of test-data in storer-container
+# set ownership of root dir in storer-container.
 
 docker exec \
   --user root \
   ${STORER_CONTAINER} \
-    sh -c "chown -R storer:storer ${KATAS_ROOT}"
+    sh -c "chown storer:storer ${KATAS_ROOT}"

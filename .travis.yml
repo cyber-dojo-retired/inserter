@@ -1,4 +1,3 @@
-sudo: false
 services: docker
 language: node_js
 
@@ -7,5 +6,4 @@ before_script:
     - chmod +x push_and_trigger.sh
 
 script:
-    - ./pipe_build_up_test.sh
-    - ./push_and_trigger.sh cyber-dojo/saver
+    - ./pipe_build_up_test.sh && ./push_and_trigger.sh

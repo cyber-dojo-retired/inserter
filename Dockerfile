@@ -1,4 +1,4 @@
-FROM  docker:latest
+FROM docker:latest
 LABEL maintainer=jon@jaggersoft.com
 
 RUN apk add bash

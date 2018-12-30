@@ -15,12 +15,9 @@ readonly KATA_IDS=( \
   9fUSFm6hmT \
   9fvMuUlKbh )
 
-# - - - - - - - - - - - - - - - - - - - - - - - -
-
-echo "inserting new katas into ${STORER_CONTAINER}"
 for KATA_ID in "${KATA_IDS[@]}"
 do
-  echo "...${KATA_ID}"
+  echo -n '.'
   cat ${MY_DIR}/${KATA_ID}.tgz \
     | docker exec \
         --user root \
@@ -28,3 +25,8 @@ do
         ${STORER_CONTAINER} \
             sh -c "tar -zxf - -C ${KATAS_ROOT}"
 done
+
+docker exec \
+  --user root \
+  ${STORER_CONTAINER} \
+    sh -c "chown -R storer:storer ${KATAS_ROOT}/9f"
