@@ -11,3 +11,7 @@ which created a lot of FD/... folders which were then all zipped up
 tar -zcf FD.tgz FD
 
 Something in this data-set crashes the porter script...
+Found it.
+FD/3D55C9E3/zebra/
+ manifest.json  size==33,675,434
+ sandbox/output size==32,583,843
