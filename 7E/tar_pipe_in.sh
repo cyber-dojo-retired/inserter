@@ -16,4 +16,4 @@ cat ${MY_DIR}/7E.tgz \
 docker exec \
   --user root \
   ${STORER_CONTAINER} \
-    sh -c "chown -R storer:storer ${KATAS_ROOT}/7E"
+    sh -c "chown -R storer ${KATAS_ROOT}/7E"

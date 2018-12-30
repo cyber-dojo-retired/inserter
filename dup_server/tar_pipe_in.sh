@@ -22,4 +22,4 @@ done
 docker exec \
   --user root \
   ${STORER_CONTAINER} \
-    sh -c "chown -R storer:storer ${KATAS_ROOT}/46"
+    sh -c "chown -R storer ${KATAS_ROOT}/46"

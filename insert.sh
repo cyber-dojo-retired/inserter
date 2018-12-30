@@ -30,4 +30,4 @@ done
 docker exec \
   --user root \
   ${STORER_CONTAINER} \
-    sh -c "chown storer:storer ${KATAS_ROOT}"
+    sh -c "chown storer ${KATAS_ROOT}"

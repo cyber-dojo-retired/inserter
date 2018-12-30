@@ -27,4 +27,7 @@ done
 docker exec \
   --user root \
   ${STORER_CONTAINER} \
-    sh -c "chown -R storer:storer ${KATAS_ROOT}/1F ${KATAS_ROOT}/5A ${KATAS_ROOT}/42"
+    sh -c "chown -R storer \
+      ${KATAS_ROOT}/1F \
+      ${KATAS_ROOT}/5A \
+      ${KATAS_ROOT}/42"
