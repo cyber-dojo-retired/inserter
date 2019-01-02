@@ -5,6 +5,8 @@ readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
 readonly STORER_CONTAINER=${1}
 readonly KATAS_ROOT=${2}
 readonly KATA_IDS=( \
+    029CD5A603 \
+    029CD5E9ED \
     463748A0E8 \
     463748D943 )
 
